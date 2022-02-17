@@ -7,8 +7,11 @@
 	<body>
 		<div id="textDiv">
 			<p id="text"></p>
-			<p id="guesses"></p>
+			
 		</div>
+		<input type='text' id='wordInput'></input>
+		<p id="guesses"></p>
+		<button onclick=submit() id='submitBtn'>Submit</button>
 		<script>
 			var wordList = [
 				"ophthalmologist",
@@ -53,6 +56,11 @@
 				}
 				chance -= 1;
 				guesses.innerHTML = chance + " guesses left!";
+				if(chance == 0){
+					document.getElementById("wordInput").style.display = "none";
+					document.getElementById("submitBtn").style.display = "none";
+					return "The word is " + Word + ". Game Over.";
+				}
 				return result;
 			}
 			
@@ -72,7 +80,6 @@
 			init();
 			
 		</script>
-		<input type='text' id='wordInput'></input>
-		<button onclick=submit() id='submitBtn'>Submit</button>
+		
 	</body>
 </html>
