@@ -54,6 +54,9 @@
 				var _ = document.getElementById('textDiv');
 				var text = document.getElementById('wordInput');
 				var result = check(text.value);
+				var newword = document.createElement('p')
+				newword.innerHTML = text.value;
+				_.appendChild(newword)
 				text.value='';
 				var newline = document.createElement('p')
 				newline.innerHTML = result;
