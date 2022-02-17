@@ -10,7 +10,11 @@
 			<p id="guesses"></p>
 		</div>
 		<script>
-			var Word = "ophthalmologist";
+			var wordList = [
+				"ophthalmologist",
+				"strain"
+			]
+			var Word = wordList[Math.floor(Math.random() * wordList.length)];;
 			var chance = Word.length + 1;
 		
 			function init(){
@@ -23,6 +27,8 @@
 			function check(word){
 				var guesses = document.getElementById("guesses");
 				if(word == Word){
+					document.getElementById("wordInput").style.display = "none";
+					document.getElementById("submitBtn").style.display = "none";
 					return "Congratulations! The word is " + word + "!";
 				}
 				if(word.length != Word.length){
@@ -67,6 +73,6 @@
 			
 		</script>
 		<input type='text' id='wordInput'></input>
-		<button onclick=submit()>Submit</button>
+		<button onclick=submit() id='submitBtn'>Submit</button>
 	</body>
 </html>
