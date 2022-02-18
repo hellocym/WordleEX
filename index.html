@@ -17,7 +17,12 @@
 				"ophthalmologist",
 				"strain"
 			]
-			var Word = wordList[Math.floor(Math.random() * wordList.length)];;
+			var s1 = '2022-02-17';
+			s1 = new Date(s1.replace(/-/g, "/"));
+			s2 = new Date();
+			var days = s2.getTime() - s1.getTime();
+			var time = parseInt(days / (1000 * 60 * 60 * 24));
+			var Word = wordList[time % wordList.length];
 			var chance = Word.length + 1;
 		
 			function init(){
