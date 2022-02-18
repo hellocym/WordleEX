@@ -34,6 +34,7 @@
 			
 			function check(word){
 				var guesses = document.getElementById("guesses");
+				chance -= 1;
 				if(word == Word){
 					document.getElementById("wordInput").style.display = "none";
 					document.getElementById("submitBtn").style.display = "none";
@@ -59,7 +60,7 @@
 						 
 					}
 				}
-				chance -= 1;
+				
 				guesses.innerHTML = chance + " guesses left!";
 				if(chance == 0){
 					document.getElementById("wordInput").style.display = "none";
